@@ -1,0 +1,85 @@
+## pyparazzi standard database
+
+## facebook related
+
+facebook
+fbsbx
+fbcdn
+fb
+fbstatic
+
+## instagram
+
+igcdn
+instagram
+cdninstagram
+
+## google
+
+google
+plus.google
+
+## video services
+
+youtube
+vimeo
+nicovideo
+ustream
+twitch
+
+## audio services
+
+soundcloud
+
+## amazon
+
+amzn
+amazon
+
+## other social media
+
+twitter
+snapchat
+github
+disqus
+flickr
+deviantart
+slack
+xing
+plurk
+pixiv
+gab
+pinterest
+linkedin
+ask
+vk
+vkontakte
+ok
+odnoklassniki
+
+## blogging
+
+medium
+blogspot
+tumblr
+
+## download services
+
+dropbox
+mega
+
+## dating
+
+badoo
+meetup
+
+
+## china
+
+baidu
+digu
+fanfou
+sohu
+weibo
+qq
+renren
