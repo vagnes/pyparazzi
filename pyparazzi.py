@@ -53,8 +53,12 @@ class Pyparazzi(object):
 		try:
 			r = self.requests.get(domain)
 		except self.requests.exceptions.MissingSchema as e:
-			logging.info(("Domain request error: ", e))
-			return
+			try:
+				logging.debug("Missing schema. Trying HTTP.")
+				r = self.requests.get("http://" + domain)
+			except self.requests.exceptions.RequestException:
+				logging.debug("HTTP failed. Trying HTTPS.")
+				r = self.requests.get("https://" + domain)
 
 		bs4Site = BeautifulSoup(r.content, "lxml")
 
