@@ -58,7 +58,7 @@ Pyparazzi will use the file "linkstoscan.txt" to scan for sitemap which it will 
 
 ## FAQ
 
-Does this have legal implication if I use this tool?
+Are there any legal implication if I use this tool?
 
 > No, everything you can find with this tool, you can find manually; just slower.
 
