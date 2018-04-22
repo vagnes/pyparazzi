@@ -47,6 +47,16 @@ sFile_with_urls = args.file
 bLogging = args.log
 bSitemap = args.sitemap
 
+# Ensure valid filename
+
+try:
+	if os.path.isfile(sOutput + ".txt"):
+		sOutput = sOutput + str(random.randint(1, 9999))
+except TypeError:
+	sOutput = "".join([x for x in sDomain if x.isalnum()])
+	if os.path.isfile(sOutput + ".txt"):
+		sOutput = sOutput + str(random.randint(1, 9999))
+
 # Enable logging
 
 if bLogging:
@@ -134,14 +144,6 @@ def sitemap_search(sDomain, lLink_container):
 		link_search(link_enumerator(url, None, lLink_container), lLink_container)
 
 def export_links(lOutput_container, sOutput):
-
-	try:
-		if os.path.isfile(sOutput + ".txt"):
-			sOutput = sOutput + str(random.randint(1, 9999))
-	except TypeError:
-		sOutput = "".join([x for x in sDomain if x.isalnum()])
-		if os.path.isfile(sOutput + ".txt"):
-			sOutput = sOutput + str(random.randint(1, 9999))
 	
 	with open(sOutput + ".txt", mode="w") as file:
 			lOutput_container = set(lOutput_container)
