@@ -1,6 +1,4 @@
-## pyparazzi standard database
-
-## facebook related
+## facebook
 
 facebook
 fbsbx
@@ -30,6 +28,10 @@ twitch
 ## audio services
 
 soundcloud
+spotify
+reverbnation
+wimp
+last
 
 ## amazon
 
@@ -42,7 +44,6 @@ twitter
 snapchat
 github
 disqus
-flickr
 deviantart
 slack
 xing
@@ -56,6 +57,47 @@ vk
 vkontakte
 ok
 odnoklassniki
+vero
+myspace
+reddit
+quora
+stumbleupon
+snapfish
+vine
+funnyordie
+weheartit
+buzznet
+meetme
+meetup
+tout
+apsense
+whatsapp
+line
+telegram
+telegra
+pinboard
+twoo
+yelp
+skyrock
+viadeo
+kiwibox
+flixster
+nextdoor
+livejournal
+taringa
+
+## photo sharing
+shutterfly
+500px
+dronestagram
+fotki
+fotolog
+imgur
+pixabay
+43things
+path
+uplike
+flickr
 
 ## blogging
 
@@ -73,8 +115,7 @@ mega
 badoo
 meetup
 
-
-## china
+## china and as
 
 baidu
 digu
