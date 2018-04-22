@@ -135,8 +135,13 @@ def sitemap_search(sDomain, lLink_container):
 
 def export_links(lOutput_container, sOutput):
 
-	if os.path.isfile(sOutput + ".txt"):
-		sOutput = sOutput + str(random.randint(1, 9999))
+	try:
+		if os.path.isfile(sOutput + ".txt"):
+			sOutput = sOutput + str(random.randint(1, 9999))
+	except TypeError:
+		sOutput = "".join([x for x in sDomain if x.isalnum()])
+		if os.path.isfile(sOutput + ".txt"):
+			sOutput = sOutput + str(random.randint(1, 9999))
 	
 	with open(sOutput + ".txt", mode="w") as file:
 			lOutput_container = set(lOutput_container)
