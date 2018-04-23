@@ -146,12 +146,26 @@ def sitemap_search(sDomain, lLink_container):
 def export_links(lOutput_container, sOutput):
 	
 	with open(sOutput + ".txt", mode="w") as file:
-			lOutput_container = set(lOutput_container)
-			lOutput_container = sorted(lOutput_container)
-			for element in lOutput_container:
-				file.write(element + "\n")
+		lOutput_container = set(lOutput_container)
+		lOutput_container = sorted(lOutput_container)
+		for element in lOutput_container:
+			file.write(element + "\n")
+
+def domain_schema_fixer(sDomain):
+	
+	try:
+		r = requests.get(sDomain)
+	except requests.exceptions.MissingSchema:
+		sDomain = "https://" + sDomain
+		r = requests.get(sDomain)
+		logging.info("Argument missing https prefix.")
+	except requests.exceptions.MissingSchema:
+		sDomain = "http://" + sDomain
+		r = requests.get(sDomain)
+		logging.info("Argumet missing http prefix.")
 
 def keyboard_interrupt_save_and_exit():
+	
 	sKeyboard_int_error_msg = "Scraping interrupted. Saving and exiting."
 	print(sKeyboard_int_error_msg)
 	logging.warning(sKeyboard_int_error_msg)
@@ -173,17 +187,9 @@ def main(sDatabase, sDomain, sOutput, bLogging):
 				lLink_container.append(line.rstrip())
 
 	# Request domain data
+
 	if sDomain is not None:
-		try:
-			r = requests.get(sDomain)
-		except requests.exceptions.MissingSchema:
-			sDomain = "https://" + sDomain
-			r = requests.get(sDomain)
-			logging.info("Argument missing https prefix.")
-		except requests.exceptions.MissingSchema:
-			sDomain = "http://" + sDomain
-			r = requests.get(sDomain)
-			logging.info("Argumet missing http prefix.")
+		domain_schema_fixer(sDomain)
 
 	# CLI option launcher
 
@@ -197,21 +203,11 @@ def main(sDatabase, sDomain, sOutput, bLogging):
 						continue
 					else:
 						line = line.rstrip()
-						try:
-							r = requests.get(line)
-						except requests.exceptions.MissingSchema:
-							line = "https://" + line
-							r = requests.get(line)
-							logging.info("Argument missing https prefix.")
-						except requests.exceptions.MissingSchema:
-							line = "http://" + line
-							r = requests.get(line)
-							logging.info("Argumet missing http prefix.")
-						
+						domain_schema_fixer(line)
 						lDomain_container.append(line.rstrip())
 				
 					if bSitemap:
-						print(f"Now scraping sitemap {line} for urls.")
+						print("Now scraping sitemap {} for urls.".format(line))
 						sitemap_search(line, lLink_container)
 					else:
 						link_search(link_enumerator(sDomain, lDomain_container, lLink_container), lLink_container)
@@ -220,7 +216,7 @@ def main(sDatabase, sDomain, sOutput, bLogging):
 
 	else:
 		if bSitemap:
-			print(f"Now scraping sitemap {sDomain} for urls.")
+			print("Now scraping sitemap {} for urls.".format(sDomain))
 			try:
 				sitemap_search(sDomain, lLink_container)
 			except KeyboardInterrupt:
