@@ -1,3 +1,7 @@
-output*.txt
+*.txt
 *.log
+*.xml
 __pycache__
+!requirements.txt
+!std_database.txt
+*/
