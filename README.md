@@ -2,7 +2,7 @@
 
 ## Overview
 
-This tool scan webpages for links relative to a database. It also can scan web pages from a sitemap, from a list of domains, or from a list of sitemaps.
+Pyparazzi scans webpages for links, either using the standard database or your own. It also can scan web pages from a sitemap, from a list of domains, or from a list of sitemaps.
 
 ## Usage
 
