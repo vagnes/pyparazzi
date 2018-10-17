@@ -60,16 +60,16 @@ Pyparazzi will use the file "linkstoscan.txt" to scan for sitemap which it will 
 
 Are there any legal implication if I use this tool?
 
-> No, everything you can find with this tool, you can find manually; just slower.
+> Everything you can find with this tool, you can find manually; just slower. So probably no.
 
 It often outputs weird "links" that aren't really links, but buttons etc.
 
-> We are aware. It does not do any post processing or sanitation of links.
+> I'm are aware. It does not do any post processing or sanitation of links.
 
 Some short short-links give results that are unexpected or wrong.
 
-> That is expected and something we hope can be improved upon.
+> That is expected and something I hope can be improved upon.
 
-Pyparazzi is super slow!
+Pyparazzi is slow!
 
-> Agreed. We might do an update with async/threading, or you can do a PR right now.
+> Agreed. There is some rudamentary async, but it can be improved greatly upon.
