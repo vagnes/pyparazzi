@@ -55,7 +55,6 @@ linkedin
 ask
 vk
 vkontakte
-ok
 odnoklassniki
 vero
 myspace
