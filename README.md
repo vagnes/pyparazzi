@@ -80,7 +80,7 @@ youtube.com/watch?v=XiFkyR35v2Y
 
 ## FAQ
 
-Are there any legal implication if I use this tool?
+Is there any legal implication if I use this tool?
 
 > Everything you can find with this tool, you can find manually; just slower. So probably no.
 
@@ -94,4 +94,4 @@ Some short short-links give results that are unexpected or wrong.
 
 Pyparazzi is slow!
 
-> Agreed. There is some rudamentary async, but it can be improved greatly upon.
+> Agreed. There is some rudimentary async, but it can be improved greatly upon.
