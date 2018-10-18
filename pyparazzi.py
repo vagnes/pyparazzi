@@ -155,7 +155,6 @@ def sitemap_search(sDomain, lLink_container, isFile=False):
     else:
         site = sDomain
         for link in re.findall(r"<loc>(.*)<", site):
-            print(link)
             urls.append(link)
 
     with futures.ThreadPoolExecutor() as executor:
