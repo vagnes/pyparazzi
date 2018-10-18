@@ -56,6 +56,28 @@ Pyparazzi will use the file "linkstoscan.txt" to scan for sitemap which it will 
 
 > If you do more than one scan with the same name, the output file will be different (random integer added to the name), but the logfile will just have the new content appended.
 
+An example output, from https://vagn.es/ :
+
+```text
+github.com/deepfakes/faceswap
+github.com/gkbrk/slowloris
+github.com/spf13/cobra
+github.com/tj/slowloris
+github.com/urfave/cli
+github.com/vagnes
+github.com/vagnes/ergodox-layout
+github.com/vagnes/go-cli-tutorial
+github.com/valyala/goloris
+linkedin.com/in/vagnes
+reddit.com/r/ErgoDoxEZ/comments/7v3vzh/notes_from_a_firsttime_ergodox_ez_user/
+reddit.com/r/deepfakes/
+reddit.com/r/deepfakes/comments/7sycbf/a_message_to_everyone_who_opposes_deepfakes_as/
+reddit.com/u/ezuk
+reddit.com/user/Gravity_Horse
+twitter.com/vagn_es
+youtube.com/watch?v=XiFkyR35v2Y
+```
+
 ## FAQ
 
 Are there any legal implication if I use this tool?
