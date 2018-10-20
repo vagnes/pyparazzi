@@ -62,9 +62,11 @@ except TypeError:
 # Enable logging
 
 if bLogging:
-    logging.basicConfig(filename=str(sOutput)+".log", level=logging.DEBUG,
-                        format="%(asctime)s - %(levelname)s %(module)s - %(funcName)s: %(message)s",
-                        datefmt="%Y-%m-%d %H:%M:%S")
+    logging.basicConfig(
+		filename=str(sOutput)+".log", level=logging.DEBUG,
+		format="""%(asctime)s - %(levelname)s %(module)s - 
+			%(funcName)s: %(message)s""",
+		datefmt="%Y-%m-%d %H:%M:%S")
 
 # Init containers
 
@@ -200,8 +202,9 @@ def keyboard_interrupt_save_and_exit():
 def main(sDatabase, sDomain, sOutput, bLogging):
 
     logging.debug("--- New session started ---")
-    logging.debug(msg="sDatabase={}, sDomain={}, sOutput={}, bLogging={}, bSitemap={}".format(
-        sDatabase, sDomain, sOutput, bLogging, bSitemap))
+    logging.debug(
+		msg="sDatabase={}, sDomain={},sOutput={}, bLogging={}, bSitemap={}"
+		.format(sDatabase, sDomain, sOutput, bLogging, bSitemap))
 
     # Open database
 
@@ -237,7 +240,8 @@ def main(sDatabase, sDomain, sOutput, bLogging):
                             domain_schema_fixer(line)
                             lDomain_container.append(line.rstrip())
                             link_search(link_enumerator(
-                                sDomain, lDomain_container, lLink_container), lLink_container)
+                                sDomain, lDomain_container, lLink_container), 
+								lLink_container)
         except KeyboardInterrupt:
             keyboard_interrupt_save_and_exit()
 
@@ -250,8 +254,10 @@ def main(sDatabase, sDomain, sOutput, bLogging):
                 keyboard_interrupt_save_and_exit()
 
         elif sDomain:
-            link_search(link_enumerator(sDomain, lDomain_container,
-                                        lLink_container), lLink_container)
+            link_search(
+				link_enumerator(
+					sDomain, lDomain_container,
+					lLink_container), lLink_container)
 
     # Export data to txt
 
